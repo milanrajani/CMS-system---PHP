@@ -37,3 +37,4 @@
                                     <input type="submit" name="update_category" class="btn btn-primary" value="Update category">
                                 </div>
 </form>
+

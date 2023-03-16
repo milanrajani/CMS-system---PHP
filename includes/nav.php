@@ -14,7 +14,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-
+                <li>
+                        <a href="registration.php">Registration</a>
+                    </li>
                 <?php
                 $query = 'SELECT * FROM category';
                 $select_all_category_query = mysqli_query($connection, $query);
@@ -24,9 +26,10 @@
 
                     echo "<li><a href='#'>{$cat_title}<li/>";
                 }
-                
-                
                 ?>
+                   
+               
+                
 
 <li>
    

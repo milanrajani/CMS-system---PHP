@@ -37,6 +37,8 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet">
+
     <body>
     
     </body>
@@ -46,7 +48,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
    
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+        <script src="js/jquery.js"></script>
+        <script src="js/scripts.js"></script>
 
 
 </head>

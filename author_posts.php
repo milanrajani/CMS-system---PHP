@@ -16,13 +16,14 @@
                 if(isset($_GET['p_id'])){
 
                     $the_post_id = $_GET['p_id'];
+                    $the_post_author = $_GET['author'];
 
                 }
  
 
  
        
-        $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
+        $query = "SELECT * FROM posts WHERE post_author = '{$the_post_author}' ";
         $select_all_posts_query = mysqli_query($connection, $query);
         
         while($row = mysqli_fetch_assoc( $select_all_posts_query)) {
@@ -42,7 +43,7 @@
            <a href="#"><?php echo $post_title ?></a>
        </h2>
        <p class="lead">
-           by <a href="index.php"><?php echo $post_author ?></</a>
+           by <a href="author_posts.php?author=<?php echo $post_author ?>&p_id=<?php echo $post_author ?>"><?php echo $post_author ?></</a>
        </p>
        <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date ?></</p>
     
@@ -58,12 +59,12 @@
                     <a class="pull-left" href="#">
                         <img class="media-object" src="http://placehold.it/64x64" alt="">
                     </a>
-                    <div class="media-body">
+                    <!-- <div class="media-body">
                         <h4 class="media-heading">Start Bootstrap
                             <small>August 25, 2014 at 9:30 PM</small>
                         </h4>
                         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -106,7 +107,7 @@
  
  
                 <!-- Comment -->
-                <div class="well">
+                <!-- <div class="well">
                     <h4>Leave a comment:</h4>
                     <form action="" method="post" class="form" require>
                         <div class="form-group">
@@ -118,9 +119,9 @@
                         
                         <button class="btn btn-primary" name="create_comment">Submit</button>
                     </form>
-                </div>
+                </div> -->
  
-                <?php
+                <!-- <?php
                 
                 $query = "SELECT * FROM comments WHERE comment_post_id = {$the_post_id} ";
                 $query .= "AND comment_status = 'approve' ";
@@ -135,7 +136,7 @@
                     $comment_date = $row['comment_date'];
                     $comment_author = $row['comment_author'];
                    
-                    ?>
+                    ?> -->
 
 
  
