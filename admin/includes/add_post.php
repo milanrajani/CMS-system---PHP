@@ -1,4 +1,4 @@
-<?php include 'js/scripts.js';?>
+<!-- <?php include 'js/scripts.js';?> -->
 
 <?php
 
