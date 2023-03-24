@@ -11,7 +11,8 @@ if(isset($_POST['create_user'])){
    $user_email = $_POST['user_email'];
    $user_role = $_POST['user_role'];
     
-    
+   $user_password = password_hash(   $user_password, PASSWORD_BCRYPT, array('cost' => 10) );
+
 
     $query = "INSERT INTO users(username, user_password, user_firstname, user_lastname, user_email, user_role) ";
 

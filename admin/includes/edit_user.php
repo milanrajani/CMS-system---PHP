@@ -30,6 +30,20 @@ if(isset($_POST['edit_user'])){
    $user_email = $_POST['user_email'];
    $user_role = $_POST['user_role'];
     
+   if(!empty($user_password)){
+      $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
+      $get_user = mysqli_query($connection, $query);
+
+      confirmQuery($get_user);
+
+      $row = mysqli_fetch_array($get_user);
+      $db_user_password = $row['user_password'];
+
+      if($db_user_password!= $user_password){
+         $user_password = password_hash(  $user_password, PASSWORD_BCRYPT, array('cost' => 12) );
+   
+      }
+    
     
 
    $query = "UPDATE users SET ";
@@ -44,6 +58,7 @@ if(isset($_POST['edit_user'])){
    $edit_user_query = mysqli_query($connection, $query);
    confirmQuery($edit_user_query);
    header("Location: users.php");
+}
 
 }
 ?>
@@ -59,7 +74,7 @@ if(isset($_POST['edit_user'])){
 
      <div class="form-group">
         <label for="post_content">Password</label>
-         <input type="password" value="<?php echo  $user_password; ?>" class="form-control" name="user_password">
+         <input type="password" autocomplete="off"  class="form-control" name="user_password">
      </div>
 
 
