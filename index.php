@@ -20,7 +20,7 @@ $per_page = 2;
               $page =  $_GET['page']; 
             } else {
                 $page ="";
-            }
+            } 
 
             if($page == "" || $page ==1){
                 $page_1 = 0;

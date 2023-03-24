@@ -3,7 +3,18 @@
 <body>
 
     <div id="wrapper">
+        <?php 
+       
         
+        
+        
+        
+        
+        
+        
+        
+        
+        ?>
     <?php 
         if($connection) echo "connected"
         ?>
@@ -24,6 +35,11 @@
 
                                     echo $_SESSION['username'];
 }?></small>
+                        </h1>
+
+                        <h1>
+
+                            <?php echo $count_user?>
                         </h1>
                          
                     </div>
